@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medico Expo Registration</title>
+</head>
+<body>
+
+    <h2>Medico Expo 2026 Registration Form</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+        
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
