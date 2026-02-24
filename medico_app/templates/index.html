@@ -1,19 +1,353 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Medico Expo Registration</title>
+    <title>Medico Expo 2026</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Segoe UI',sans-serif;
+        }
+
+        body{
+            background:#fdfdfd;
+            scroll-behavior:smooth;
+            color:#333;
+        }
+
+        /* NAVBAR */
+        nav{
+            background:#d81b60;
+            padding:18px 60px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            position:fixed;
+            width:100%;
+            top:0;
+            z-index:1000;
+        }
+
+        nav .logo{
+            color:white;
+            font-weight:600;
+            font-size:18px;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin-left:25px;
+            font-size:14px;
+        }
+
+        nav a:hover{
+            opacity:0.8;
+        }
+        .logo{
+            display:flex;
+            align-items:center;
+            gap:10px;
+            color:white;
+        }
+
+        .logo-icon{
+            width:42px;
+            height:42px;
+            background:white;
+            color:#d81b60;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-weight:bold;
+            font-size:16px;
+        }
+
+        .brand-text strong{
+            font-size:16px;
+            letter-spacing:1px;
+        }
+
+        .brand-text span{
+        font-size:12px;
+        display:block;
+        }
+
+        section{
+            padding:120px 20px;
+            text-align:center;
+        }
+
+        .container{
+            max-width:900px;
+            margin:auto;
+        }
+
+        h1{
+            font-size:48px;
+            margin-bottom:20px;
+        }
+
+        h2{
+            font-size:32px;
+            margin-bottom:25px;
+            color:#d81b60;
+        }
+
+        p{
+            font-size:16px;
+            line-height:1.7;
+            margin-bottom:15px;
+        }
+
+        /* HERO */
+        .hero{
+            background:linear-gradient(to right,#fce4ec,#ffffff);
+            padding-top:160px;
+        }
+
+        .highlight{
+            margin-top:20px;
+            font-weight:500;
+            color:#d81b60;
+        }
+
+        .btn{
+            display:inline-block;
+            margin-top:25px;
+            padding:14px 35px;
+            background:#d81b60;
+            color:white;
+            text-decoration:none;
+            border-radius:30px;
+            font-size:15px;
+        }
+
+        .btn:hover{
+            background:#ad1457;
+        }
+
+        /* CARD GRID */
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:25px;
+            margin-top:40px;
+        }
+
+        .card{
+            background:white;
+            padding:25px;
+            border-radius:8px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.06);
+        }
+
+        .card strong{
+            color:#d81b60;
+        }
+
+        /* LIGHT SECTION */
+        .light{
+            background:#fff5f9;
+        }
+
+        /* FORM */
+        .form-box{
+            max-width:500px;
+            margin:40px auto 0;
+            background:white;
+            padding:35px;
+            border-radius:8px;
+            box-shadow:0 6px 20px rgba(0,0,0,0.08);
+            text-align:left;
+        }
+
+        form input, form select{
+            width:100%;
+            padding:12px;
+            margin-bottom:18px;
+            border:1px solid #ccc;
+            border-radius:4px;
+        }
+
+        form button{
+            width:100%;
+            padding:14px;
+            background:#d81b60;
+            color:white;
+            border:none;
+            border-radius:4px;
+            font-size:15px;
+        }
+
+        form button:hover{
+            background:#ad1457;
+        }
+
+        /* FOOTER */
+        footer{
+            background:#880e4f;
+            color:white;
+            padding:50px 20px;
+            text-align:center;
+        }
+
+        footer a{
+            color:white;
+            text-decoration:none;
+            margin:0 8px;
+            font-size:14px;
+        }
+
+        @media(max-width:768px){
+            nav{
+                padding:15px 20px;
+            }
+        }
+
+    </style>
 </head>
+
 <body>
 
-    <h2>Medico Expo 2026 Registration Form</h2>
+<nav>
+    <div class="logo">
+    <div class="logo-icon">ME</div>
+    <div class="brand-text">
+        <strong>MEDICO EXPO</strong>
+        <span>2026</span>
+    </div>
+    </div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#countries">Countries</a>
+        <a href="#register">Register</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
 
-    <form method="POST">
-        {% csrf_token %}
-        
-        {{ form.as_p }}
-        
-        <button type="submit">Submit</button>
-    </form>
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <h1>MEDICO EXPO 2026</h1>
+        <p><strong>Your Trusted Guide to Medical Admissions</strong></p>
+        <p>Meet 15+ Country Delegates & Medical Education Experts</p>
+        <p><strong>Coimbatore | Chennai | Trichy | Madurai | Salem</strong></p>
+
+        <div class="highlight">
+            ✔ 15+ Countries &nbsp;&nbsp; ✔ Govt & Private College Representatives
+        </div>
+
+        <a href="#register" class="btn">Register Now</a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="container">
+        <h2>What is Medico Expo?</h2>
+        <p>
+            A medical education exhibition for NEET aspirants & parents offering 
+            clear guidance for MBBS & BSc Nursing admissions in India & Abroad.
+        </p>
+
+        <h2 style="margin-top:50px;">Who Should Attend</h2>
+
+        <div class="grid">
+            <div class="card">NEET Aspirants</div>
+            <div class="card">MBBS / BSc Nursing Students</div>
+            <div class="card">Parents</div>
+            <div class="card">Students unsure about Govt vs Private vs Abroad</div>
+        </div>
+    </div>
+</section>
+
+<!-- COUNTRIES -->
+<section id="countries" class="light">
+    <div class="container">
+        <h2>Explore 15+ Countries</h2>
+        <div class="grid">
+            <div class="card"><strong>Georgia</strong></div>
+            <div class="card"><strong>Uzbekistan</strong></div>
+            <div class="card"><strong>Kazakhstan</strong></div>
+            <div class="card"><strong>Bulgaria</strong></div>
+            <div class="card"><strong>Nepal</strong></div>
+            <div class="card"><strong>And More...</strong></div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section id="benefits">
+    <div class="container">
+        <h2>Why Choose Us</h2>
+        <div class="grid">
+            <div class="card">✔ Official Partnerships</div>
+            <div class="card">✔ Personalized Counseling</div>
+            <div class="card">✔ Admission & Visa Guidance</div>
+            <div class="card">✔ Trusted Platform</div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="light">
+    <div class="container">
+        <h2>Testimonials</h2>
+        <div class="grid">
+            <div class="card">
+                “Very clear guidance about MBBS abroad admissions.”  
+                <br><strong>- Parent</strong>
+            </div>
+            <div class="card">
+                “I got clarity about fee structure and visa process.”  
+                <br><strong>- Student</strong>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- REGISTER -->
+<section id="register">
+    <div class="container">
+        <h2>Registration Form</h2>
+
+        <div class="form-box">
+
+            {% if messages %}
+                {% for message in messages %}
+                    <p style="color:green;">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Submit Registration</button>
+            </form>
+
+        </div>
+    </div>
+</section>
+
+<footer id="contact">
+    <p><strong>Contact Details</strong></p>
+    <p>Email: info@medicoexpo.com</p>
+
+    <div style="margin-top:15px;">
+        <a href="#about">About</a> |
+        <a href="#countries">Countries</a> |
+        <a href="#register">Register</a>
+    </div>
+
+    <p style="margin-top:20px;">© 2026 Medico Expo. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
