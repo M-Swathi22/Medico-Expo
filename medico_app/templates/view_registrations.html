@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registrations - Medico Expo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body{
+            font-family:'Segoe UI',sans-serif;
+            background:#f9f9f9;
+            padding:40px;
+        }
+
+        h2{
+            text-align:center;
+            color:#d81b60;
+            margin-bottom:30px;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            background:white;
+            box-shadow:0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        th, td{
+            padding:12px;
+            text-align:left;
+            border-bottom:1px solid #ddd;
+            font-size:14px;
+        }
+
+        th{
+            background:#d81b60;
+            color:white;
+        }
+
+        tr:hover{
+            background:#fce4ec;
+        }
+
+        .back-btn{
+            display:inline-block;
+            margin-bottom:20px;
+            padding:8px 15px;
+            background:#d81b60;
+            color:white;
+            text-decoration:none;
+            font-size:14px;
+        }
+
+        .back-btn:hover{
+            background:#ad1457;
+        }
+
+        @media(max-width:768px){
+            table{
+                font-size:12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<a href="/" class="back-btn">← Back to Home</a>
+
+<h2>Medico Expo 2026 Registrations</h2>
+
+<table>
+    <tr>
+        <th>Full Name</th>
+        <th>Mobile</th>
+        <th>City</th>
+        <th>NEET Status</th>
+        <th>College Preference</th>
+        <th>Education Loan</th>
+        <th>Date</th>
+    </tr>
+
+    {% for r in registrations %}
+    <tr>
+        <td>{{ r.fullname }}</td>
+        <td>{{ r.mobilenumber }}</td>
+        <td>{{ r.city }}</td>
+        <td>{{ r.neet_status }}</td>
+        <td>{{ r.college_preference }}</td>
+        <td>{{ r.education_loan }}</td>
+        <td>{{ r.created_at|date:"d M Y" }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="7" style="text-align:center;">No registrations yet.</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
