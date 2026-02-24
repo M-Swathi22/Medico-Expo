@@ -23,7 +23,7 @@ class Registration(models.Model):
     
 
     fullname = models.CharField(max_length=100)
-    mobilenumber = models.CharField(max_length=15)
+    mobilenumber = models.CharField(max_length=10)
     city = models.CharField(max_length=100)
     neet_status = models.CharField(max_length=20, choices=NEET_CHOICES)
     college_preference = models.CharField(max_length=20, choices=COLLEGE_CHOICES)
